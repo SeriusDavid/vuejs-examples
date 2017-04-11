@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<h1>Show message</h1>
+<div id="message" style="color: black;">
+	{{ message }}		
+</div>
+
+<h1>Loop, Seen and Methods</h1>
+<div id="loop">
+  <ol>
+  	<li v-for="item in list" v-if="seen">
+  		{{ item.text }}
+  	</li>
+  </ol>
+  <button v-on:click="newList">{{ btnToggleListTxt }}</button>
+  <button v-on:click="seenToggle">{{ btnToggleSeenTxt }}</button>
+</div>
+
+<h1>Input Handling</h1>
+<div id="input-handling">
+	<p>{{ inputMessage }}</p>
+	<input v-model="inputMessage">
+	<button v-on:click="clearInput">Limpiar</button>
+</div>
+
+<h1>Custom Components</h1>
+<div id="custom-components">
+	<list-items v-bind:list="list" v-bind:tittle="tittle">
+	</list-items>
+</div>
+<script src="vuejs_first_tutorial.js"></script>
+</body>
+</html>

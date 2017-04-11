@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://unpkg.com/vue"></script>
+
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="reactive-data">
+		<p>{{ a }}</p>
+		<input v-model="a" type="text">
+	</div>
+	<script>
+		// Reactive data example
+		var data = { a: 1 };
+		var vm = new Vue({
+			el: '#reactive-data',
+			data: data
+		});
+
+		vm.$watch('a', function (newVal, oldVal) {
+		  // if you change data.a in with Vue methods it will change in the variable to
+		  // example: if a is changed with the input to x the data.a it will be x
+		  console.log(data.a);
+		})
+
+		// Getter methods for properties
+		// vm.$data == data
+		// vm.$el   == Document.getElementById('reactive-data')
+
+		
+ 	</script>
+</body>
+</html>
