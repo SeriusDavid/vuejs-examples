@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://unpkg.com/vue"></script>
+
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Raw Html Binding</h1>
+	<div id="rawHtmlExample">
+		<p v-html="rawHtmlMsg"></p>
+		<textarea name="" id="" cols="30" rows="10" v-model="rawHtmlMsg"></textarea>		
+	</div>
+	
+	<h1>Dynamic ids</h1>
+	<div id="dynamic-ids-container">
+	
+		<div v-bind:id="dynamicFirstId">
+			<h1>{{ title }}</h1>
+			<p>{{ msg }}</p>
+			<input type="text" v-model="msg">
+			<button @click="msgMethod">{{ btnMsg }}</button>
+		</div>
+
+		<div v-bind:id="dynamicSecondId">
+			<h1>{{ title }}</h1>
+			<p>{{ msg }}</p>
+			<input type="text" v-model="msg">
+			<button @click="msgMethod">{{ btnMsg }}</button>
+		</div>
+			
+		<button @click="changeIds">Change id´s</button>
+	</div>
+	
+	<style>
+		#firstId{
+			background-color: red;
+			height: 100px;
+			width: 100px;
+			display: inline-block; 
+		}
+
+		#secondId{
+			background-color: green;
+			height: 250px;
+			width: 250px;
+			display: inline-block;
+		}
+	</style>
+
+	<script src="vuejs_template_syntax.js"></script>
+</body>
+</html>
